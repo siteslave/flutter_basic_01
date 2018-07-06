@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:hello_app/screens/home_screen.dart';
 
@@ -8,9 +7,12 @@ class HelloApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          primaryColor: Colors.pink,
+          accentColor: Colors.amber,
+          fontFamily: 'Maitree'),
       title: 'Hello app',
       home: HomeScreen(),
     );
   }
 }
-

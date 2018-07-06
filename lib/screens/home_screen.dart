@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     Widget appBar = AppBar(
-      title: Text('Welcome to Hello App!'),
+      title: Text('สวัสดีแอพ'),
       actions: <Widget>[
         IconButton(icon: Icon(Icons.home), onPressed: () {}),
         IconButton(icon: Icon(Icons.account_circle), onPressed: () {})
@@ -33,11 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), title: Text('Account')),
+              icon: Icon(Icons.home), title: Text('หน้าหลัก')),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings), title: Text('Setting')),
+              icon: Icon(Icons.account_circle), title: Text('ข้อมูลผู้ใช้')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), title: Text('ตั้งค่า')),
         ]);
 
     return Scaffold(
@@ -53,7 +54,11 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Page One'),
+      child: Card(
+        child: Image(
+          image: AssetImage('assets/images/pic1.jpg'),
+        ),
+      ),
     );
   }
 }
@@ -62,7 +67,9 @@ class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Page Two'),
+      child: Image(
+        image: AssetImage('assets/images/pic2.jpg'),
+      ),
     );
   }
 }
@@ -71,7 +78,9 @@ class PageThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Page Three'),
+      child: Image(
+        image: AssetImage('assets/images/pic3.jpg'),
+      ),
     );
   }
 }
