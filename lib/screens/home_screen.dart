@@ -6,6 +6,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     Widget appBar = AppBar(
@@ -21,12 +23,55 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Icon(Icons.add),
     );
 
+    List pages = [PageOne(), PageTwo(), PageThree()];
+
+    Widget bottomNavBar = BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), title: Text('Account')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), title: Text('Setting')),
+        ]);
+
     return Scaffold(
       appBar: appBar,
-      body: Center(
-        child: Text('สวัสดีแอพ'),
-      ),
+      body: pages[currentIndex],
       floatingActionButton: floatingAction,
+      bottomNavigationBar: bottomNavBar,
+    );
+  }
+}
+
+class PageOne extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Page One'),
+    );
+  }
+}
+
+class PageTwo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Page Two'),
+    );
+  }
+}
+
+class PageThree extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Page Three'),
     );
   }
 }
