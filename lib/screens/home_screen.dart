@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     Widget floatingAction = FloatingActionButton(
-      onPressed: () => print('Floating button clicked!!'),
+      onPressed: () => Navigator.of(context).pushNamed('/add'),
       child: Icon(Icons.add),
     );
 
