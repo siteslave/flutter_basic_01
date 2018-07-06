@@ -8,9 +8,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    Widget appBar = AppBar(
+      title: Text('Welcome to Hello App!'),
+      actions: <Widget>[
+        IconButton(icon: Icon(Icons.home), onPressed: () {}),
+        IconButton(icon: Icon(Icons.account_circle), onPressed: () {})
+      ],
+    );
+
     return Scaffold(
-      appBar: AppBar(title: Text('Hello app'),),
-      body: Center(child: Text('สวัสดีแอพ'),),
+      appBar: appBar,
+      body: Center(
+        child: Text('สวัสดีแอพ'),
+      ),
     );
   }
 }
