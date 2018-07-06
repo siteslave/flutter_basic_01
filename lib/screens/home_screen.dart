@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Icon(Icons.add),
     );
 
-    List pages = [PageOne(), PageTwo(), PageThree()];
+    List pages = [RowLayout(), PageTwo(), PageThree()];
 
     Widget bottomNavBar = BottomNavigationBar(
         currentIndex: currentIndex,
@@ -46,6 +46,57 @@ class _HomeScreenState extends State<HomeScreen> {
       body: pages[currentIndex],
       floatingActionButton: floatingAction,
       bottomNavigationBar: bottomNavBar,
+    );
+  }
+}
+
+class RowLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            height: 100.0,
+            color: Colors.red,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 100.0,
+            color: Colors.green,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            height: 100.0,
+            color: Colors.blue,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ColumnLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Container(
+          height: 100.0,
+          color: Colors.red,
+        ),
+        Container(
+          height: 100.0,
+          color: Colors.green,
+        ),
+        Container(
+          height: 100.0,
+          color: Colors.blue,
+        ),
+      ],
     );
   }
 }
