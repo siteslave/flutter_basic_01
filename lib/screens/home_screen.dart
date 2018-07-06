@@ -16,11 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
 
+    Widget floatingAction = FloatingActionButton(
+      onPressed: () => print('Floating button clicked!!'),
+      child: Icon(Icons.add),
+    );
+
     return Scaffold(
       appBar: appBar,
       body: Center(
         child: Text('สวัสดีแอพ'),
       ),
+      floatingActionButton: floatingAction,
     );
   }
 }
